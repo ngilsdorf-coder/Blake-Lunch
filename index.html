@@ -180,34 +180,34 @@ body {
 
 <script>
 /* =====================================================================
-   MENU DATA — this is the only part that changes each month.
+   MENU DATA — replaced each month.
    Prefix an item with "V " to mark it vegetarian.
    Use "Name|description" to add a smaller line under a headline dish.
-   Non-lunch days use { closed: "Reason" }.
+   "feature" (like a potato bar) becomes the headline, with entrées listed below.
+   Non-lunch days use { closed: "Banner text" }. "note" adds a banner for that day.
    ===================================================================== */
 const MENU = {
-  "2026-10-01": { entrees: ["Meat Lasagna", "V Cheese Lasagna"], sides: ["Roasted Cauliflower"], pizza: true, bowl: "Burrito", dessert: "Devil's Food Cake" },
-  "2026-10-02": { entrees: ["General Tso's Chicken", "V General Tso's Tofu"], sides: ["Brown Rice", "Steamed Vegetables", "Vegetarian Egg Rolls"], bowl: "Bulgogi", dessert: "Fortune Cookie" },
-  "2026-10-05": { entrees: ["Creamy Poblano Chicken", "V Creamy Poblano Tofu"], sides: ["Jasmine Rice", "Corn", "Garlic Bread"], bowl: "Moroccan", dessert: "Frozen Treat" },
-  "2026-10-06": { entrees: ["Blackened Fish", "V Blackened Tofu"], sides: ["Creamy Polenta", "Sautéed Spinach"], pizza: true, bowl: "Brunch", dessert: "Lemon Curd" },
-  "2026-10-07": { entrees: ["Korean Pork BBQ Taco", "V Korean BBQ Vegan Taco"], sides: ["Tortillas", "Korean Slaw"], also: ["Chicken Bacon Ranch Melt"], bowl: "Niçoise", dessert: "Homemade Brownie" },
-  "2026-10-08": { entrees: ["Oven Roasted Turkey", "V Vegan Meatballs"], sides: ["V Mashed Potatoes", "V Vegetarian Gravy", "Green Beans"], pizza: true, bowl: "Pesto", dessert: "Rice Krispie Treat" },
-  "2026-10-09": { entrees: ["Smoked Chicken", "V Tomato & Corn Pasta"], sides: ["Ratatouille", "Garlic Bread"], bowl: "Creole", dessert: "S'more Bars" },
-  "2026-10-12": { entrees: ["Doro Wat|Ethiopian chicken stew", "V Lentil Dahl"], sides: ["Rice", "Spiced Carrots"], also: ["Falafel Flatbread"], bowl: "Miso", dessert: "Frozen Treats" },
-  "2026-10-13": { entrees: ["Beef Tacos", "V Braised Beans"], sides: ["Lettuce & Pico de Gallo", "Shredded Cheese & Crema"], pizza: true, bowl: "Mexican Mole", dessert: "Churro" },
-  "2026-10-14": { closed: "Conferences" },
-  "2026-10-15": { closed: "Conferences" },
-  "2026-10-16": { closed: "No school" },
-  "2026-10-19": { entrees: ["Chicken Cacciatore", "V Chickpea Cacciatore"], sides: ["Rosemary Potatoes", "Roasted Mushrooms", "Breadsticks"], bowl: "Curry", dessert: "Chef's Choice Dessert" },
-  "2026-10-20": { entrees: ["Smoked Pork Loin", "V Picadillo"], sides: ["Rice", "Green Beans"], pizza: true, bowl: "Tinga", dessert: "Fruit Crisp" },
-  "2026-10-21": { entrees: ["Spanish Pot Roast", "V Spanish Tempeh"], sides: ["Papas Bravas", "Roasted Vegetables"], also: ["Chicken Tacos"], bowl: "Plant Based", dessert: "Brownie" },
-  "2026-10-22": { entrees: ["V Creamy Vegetable Pasta", "Roasted Chicken"], sides: ["Roasted Parmesan Tomatoes"], pizza: true, bowl: "Kung Pao", dessert: "Frozen Treat" },
-  "2026-10-23": { entrees: ["Lemon Pepper Chicken", "V Lemon Pepper Tofu"], sides: ["Herbed Quinoa", "Broccolini"], also: ["Mini Corn Dogs"], bowl: "Chicken Caesar", dessert: "Cookie" },
-  "2026-10-26": { entrees: ["BBQ Chicken", "V BBQ Tofu"], sides: ["Parsley Potatoes", "Sweet Corn", "Cheesy Bread"], bowl: "Jerk", dessert: "Chocolate Pudding" },
-  "2026-10-27": { entrees: ["Santa Fe Chicken", "V Black Beans & Corn"], sides: ["Cilantro Lime Quinoa", "Chipotle Cream Sauce"], pizza: true, bowl: "Thai Lettuce Wrap", dessert: "Vanilla Cake" },
-  "2026-10-28": { entrees: ["V Pesto & Tomato Pasta"], sides: ["Roasted Green Beans"], also: ["Cuban Slider"], bowl: "Vindaloo", dessert: "Fruit Crisp" },
-  "2026-10-29": { entrees: ["Beef Bulgogi", "V Tempeh Bulgogi"], sides: ["Jasmine Rice", "Sugar Snap Peas"], pizza: true, bowl: "BBQ", dessert: "Italian Ice" },
-  "2026-10-30": { feature: "Pasta Bar", entrees: ["Ragù", "V Marinara", "V Alfredo"], sides: ["Chef's Choice Vegetables", "Garlic Bread"], bowl: "Greek Salad", dessert: "Sweet Treats" }
+  "2026-11-02": { entrees: ["Indian Butter Chicken", "V Chana Masala"], sides: ["Steamed Rice", "Broccoli"], also: ["Fish Taco"], bowl: "Lentil", dessert: "Frozen Treat" },
+  "2026-11-03": { entrees: ["Beef Rendang", "V Chickpea Rendang"], sides: ["Peas", "Coconut Rice"], pizza: true, bowl: "Laab", dessert: "Cookie" },
+  "2026-11-04": { closed: "Noon dismissal today. No lunch service.", note: "Let’s go Blake boys’ soccer at State!" },
+  "2026-11-05": { closed: "Early dismissal today. No lunch service.", note: "Let’s go Blake girls’ soccer at State!" },
+  "2026-11-06": { entrees: ["Macaroni & Cheese"], sides: ["Broccoli & Cauliflower"], also: ["Mini Corn Dogs"], bowl: "Smoked Salmon", dessert: "Lemon Bar" },
+  "2026-11-09": { entrees: ["Beef & Broccoli", "V Mock Duck & Broccoli"], sides: ["Steamed Rice"], also: ["Open-Faced Turkey Melt"], bowl: "Chimichurri", dessert: "Fruit Crisp" },
+  "2026-11-10": { entrees: ["Scrambled Eggs", "Sausage", "V Vegan Sausage"], sides: ["Hash Brown Potatoes"], pizza: true, bowl: "Falafel Salad", dessert: "Mini Donuts" },
+  "2026-11-11": { entrees: ["General Tso’s Chicken", "V General Tso’s Tofu"], sides: ["Lo Mein Noodles", "Steamed Vegetables", "Vegetarian Egg Roll"], bowl: "Bulgogi", dessert: "Fortune Cookie" },
+  "2026-11-12": { entrees: ["Meat Lasagna", "Cheese Lasagna"], sides: ["Roasted Cauliflower"], pizza: true, bowl: "Burrito", dessert: "Devil’s Food Cake" },
+  "2026-11-13": { entrees: ["Santa Fe Chicken"], sides: ["V Black Beans", "Cilantro Lime Quinoa", "Steamed Corn", "Chipotle Cream Sauce"], also: ["Seafood Roll"], bowl: "Kale", dessert: "Under the Sea Jello", note: "The Little Mermaid musical" },
+  "2026-11-16": { entrees: ["Creamy Poblano Chicken", "V Creamy Poblano Tofu"], sides: ["Jasmine Rice", "Corn", "Garlic Bread"], bowl: "Creole", dessert: "S’more Bars" },
+  "2026-11-17": { entrees: ["Blackened Fish", "V Blackened Tofu"], sides: ["Creamy Polenta", "Sautéed Spinach"], pizza: true, bowl: "Brunch", dessert: "Cinnamon Streusel Cake" },
+  "2026-11-18": { entrees: ["Hawaiian Pork", "V Hawaiian Mock Duck"], sides: ["Sweet Potato Mash", "Pineapple Cabbage Slaw"], also: ["Dill Pickle Chicken Sandwich"], bowl: "Niçoise", dessert: "Brownie" },
+  "2026-11-19": { feature: "Turkey Feast", entrees: ["Oven Roasted Turkey", "V Vegan Meatballs"], sides: ["Mashed Potatoes", "V Vegetarian Gravy", "Herbed Stuffing", "Green Bean Casserole", "Cranberry Sauce"], bowl: "Pesto", dessert: "Pumpkin Pie" },
+  "2026-11-20": { feature: "Baked Potato Bar", entrees: ["Beef Chili", "V Vegan Chili"], sides: ["Bacon", "Shredded Cheese & Sour Cream", "Cauliflower"], also: ["All-Beef Hot Dog"], bowl: "Chicken Caesar", dessert: "Cookie" },
+  "2026-11-23": { entrees: ["Doro Wat|Ethiopian chicken stew", "V Tofu Curry"], sides: ["Rice", "Spiced Carrots"], also: ["Gyro Flatbread"], bowl: "Miso", dessert: "Frozen Treats" },
+  "2026-11-24": { feature: "Beef Nacho Bar", entrees: ["V Braised Beans"], sides: ["Lettuce & Pico de Gallo", "Shredded Cheese & Crema"], pizza: true, bowl: "Mexican Mole", dessert: "Churro" },
+  "2026-11-25": { closed: "No school today. Have a great Thanksgiving break!" },
+  "2026-11-26": { closed: "Happy Thanksgiving! No school today." },
+  "2026-11-27": { closed: "No school today. Enjoy the long weekend!" },
+  "2026-11-30": { entrees: ["Chicken Cacciatore", "V Chickpea Cacciatore"], sides: ["Garlic Rosemary Potatoes", "Roasted Mushrooms", "Garlic Breadstick"], bowl: "Curry", dessert: "Chef’s Choice Dessert" }
 };
 
 /* =====================================================================
@@ -215,13 +215,109 @@ const MENU = {
    ===================================================================== */
 const TIME_ZONE = "America/Chicago";   // school's clock, regardless of player settings
 const SWITCH_TO_NEXT_AT = "13:30";      // after this time, show the next school day's lunch
-const NEXT_MONTH_NAME = "November";     // used when the loaded menu runs out
+const NEXT_MONTH_NAME = "December";     // used when the loaded menu runs out
+
+// Last-minute changes: paste your Google Sheet's "Publish to web" CSV link between the quotes.
+// Leave it empty to turn overrides off. The sheet is re-checked every few minutes.
+const OVERRIDE_CSV_URL = "";
+const OVERRIDE_CHECK_MINUTES = 5;
+
+/* =====================================================================
+   Overrides from the Google Sheet
+   Columns: date | closed | feature | entrees | sides | also | pizza | bowl | dessert | note
+   - Fill only the cells you want to change; blank cells keep the original menu.
+   - Separate list items with a semicolon:  Chicken Tenders; V Veggie Burger
+   - Type a single dash ( - ) to remove something (e.g. a dash in "also" or "closed").
+   ===================================================================== */
+let OVERRIDES = {};
+
+function parseCSV(text) {
+  const rows = []; let row = [], cell = "", q = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (q) {
+      if (c === '"' && text[i + 1] === '"') { cell += '"'; i++; }
+      else if (c === '"') q = false;
+      else cell += c;
+    } else if (c === '"') q = true;
+    else if (c === ",") { row.push(cell); cell = ""; }
+    else if (c === "\n" || c === "\r") {
+      if (c === "\r" && text[i + 1] === "\n") i++;
+      row.push(cell); rows.push(row); row = []; cell = "";
+    } else cell += c;
+  }
+  if (cell !== "" || row.length) { row.push(cell); rows.push(row); }
+  return rows;
+}
+
+function normalizeDate(v) {
+  v = v.trim();
+  let m = v.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/);
+  if (m) return `${m[1]}-${m[2].padStart(2, "0")}-${m[3].padStart(2, "0")}`;
+  m = v.match(/^(\d{1,2})\/(\d{1,2})\/(\d{2,4})$/);
+  if (m) { const y = m[3].length === 2 ? "20" + m[3] : m[3]; return `${y}-${m[1].padStart(2, "0")}-${m[2].padStart(2, "0")}`; }
+  return null;
+}
+
+async function loadOverrides() {
+  if (!OVERRIDE_CSV_URL) return;
+  try {
+    const url = OVERRIDE_CSV_URL + (OVERRIDE_CSV_URL.includes("?") ? "&" : "?") + "t=" + Date.now();
+    const res = await fetch(url, { cache: "no-store" });
+    if (!res.ok) throw new Error(res.status);
+    const rows = parseCSV(await res.text()).filter(r => r.some(c => c.trim()));
+    if (!rows.length) return;
+    const head = rows[0].map(h => h.trim().toLowerCase());
+    const next = {};
+    for (const r of rows.slice(1)) {
+      const rec = {}; head.forEach((h, i) => rec[h] = (r[i] || "").trim());
+      const d = normalizeDate(rec.date || "");
+      if (d) next[d] = rec;
+    }
+    OVERRIDES = next;      // only replaced after a successful read
+    render();
+  } catch (e) {
+    console.warn("Override sheet could not be read; showing the regular menu.", e);
+  }
+}
+
+const LIST_FIELDS = ["entrees", "sides", "also"];
+const TEXT_FIELDS = ["feature", "bowl", "dessert", "note"];
+
+function applyOverride(base, o) {
+  const m = { ...(base || {}) };
+  let changedMenu = false;
+  for (const f of LIST_FIELDS) {
+    if (!o[f]) continue;
+    if (o[f] === "-") delete m[f];
+    else m[f] = o[f].split(";").map(x => x.trim()).filter(Boolean);
+    changedMenu = true;
+  }
+  for (const f of TEXT_FIELDS) {
+    if (!o[f]) continue;
+    if (o[f] === "-") delete m[f]; else m[f] = o[f];
+    if (f !== "note") changedMenu = true;
+  }
+  if (o.pizza) { m.pizza = /^(y|yes|true|x|1)$/i.test(o.pizza); changedMenu = true; }
+  if (o.closed) {
+    if (o.closed === "-") delete m.closed; else m.closed = o.closed;
+  } else if (changedMenu) {
+    delete m.closed;      // adding food to a closed day reopens it
+  }
+  return m;
+}
+
+function fullMenu() {
+  const all = { ...MENU };
+  for (const d of Object.keys(OVERRIDES)) all[d] = applyOverride(MENU[d], OVERRIDES[d]);
+  return all;
+}
 
 /* =====================================================================
    Date helpers (all dates handled as YYYY-MM-DD strings in school time)
    ===================================================================== */
 function schoolNow() {
-  // Preview any moment with ?date=2026-10-12 and/or ?time=14:00
+  // Preview any moment with ?date=2026-11-19 and/or ?time=14:00
   const params = new URLSearchParams(location.search);
   const parts = Object.fromEntries(
     new Intl.DateTimeFormat("en-CA", { timeZone: TIME_ZONE, year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hourCycle: "h23" })
@@ -235,16 +331,17 @@ function schoolNow() {
 const toUTC = s => { const [y, m, d] = s.split("-").map(Number); return new Date(Date.UTC(y, m - 1, d)); };
 const fmt = (s, opts) => toUTC(s).toLocaleDateString("en-US", { timeZone: "UTC", ...opts });
 const dayDiff = (a, b) => Math.round((toUTC(b) - toUTC(a)) / 86400000);
+const isLunch = e => e && !e.closed && ((e.entrees && e.entrees.length) || e.feature);
 
-function nextLunchAfter(dateStr, inclusive) {
-  return Object.keys(MENU).sort().find(k => (inclusive ? k >= dateStr : k > dateStr) && !MENU[k].closed);
+function nextLunchAfter(menu, dateStr) {
+  return Object.keys(menu).sort().find(k => k > dateStr && isLunch(menu[k]));
 }
 
 function labelFor(target, today) {
   const diff = dayDiff(today, target);
-  if (diff === 0) return "Today's lunch";
-  if (diff === 1) return "Tomorrow's lunch";
-  if (diff < 7)  return `${fmt(target, { weekday: "long" })}'s lunch`;
+  if (diff === 0) return "Today’s lunch";
+  if (diff === 1) return "Tomorrow’s lunch";
+  if (diff < 7)  return `${fmt(target, { weekday: "long" })}’s lunch`;
   return "Next lunch";
 }
 
@@ -261,21 +358,20 @@ const vegBadge = '<span class="veg" aria-label="Vegetarian">V</span>';
 
 function render() {
   const now = schoolNow();
+  const menu = fullMenu();
   const board = document.getElementById("board");
-  const todayEntry = MENU[now.date];
+  const todayEntry = menu[now.date];
 
-  // Which day should the screen show?
   const afterLunch = now.time >= SWITCH_TO_NEXT_AT;
-  const target = (todayEntry && !todayEntry.closed && !afterLunch)
-    ? now.date
-    : nextLunchAfter(now.date, false);
+  const target = (isLunch(todayEntry) && !afterLunch) ? now.date : nextLunchAfter(menu, now.date);
 
-  const notice = todayEntry && todayEntry.closed
-    ? `${todayEntry.closed} today. No lunch service.`
+  const notice = todayEntry
+    ? [todayEntry.closed, todayEntry.note].filter(Boolean).join("  ·  ")
     : "";
 
   if (!target) {
     board.innerHTML = `
+      <div class="notice" ${notice ? "" : "hidden"}>${esc(notice)}</div>
       <section class="empty">
         <h1>${esc(NEXT_MONTH_NAME)} menu coming soon</h1>
         <p>Check the Taher Food4Life app or blakeschool.org for the latest menu.</p>
@@ -283,10 +379,10 @@ function render() {
     return;
   }
 
-  const m = MENU[target];
-  const entrees = m.entrees.map(item);
-  // A "feature" (like Pasta Bar) becomes the headline, with every entrée listed beneath it
-  const [lead, ...alts] = m.feature ? [{ veg: false, name: m.feature, desc: "" }, ...entrees] : entrees;
+  const m = menu[target];
+  const entrees = (m.entrees || []).map(item);
+  const list = m.feature ? [{ veg: false, name: m.feature, desc: "" }, ...entrees] : entrees;
+  const [lead, ...alts] = list.length ? list : [{ veg: false, name: "Menu coming soon", desc: "" }];
   const extras = [...(m.pizza ? ["__pizza"] : []), ...(m.also || [])];
 
   board.innerHTML = `
@@ -340,18 +436,19 @@ function fitHeadline() {
   const unit = Math.min(innerWidth / 100, innerHeight * 1.778 / 100);
   let size = unit * 9;
   h.style.fontSize = size + "px";
-  const maxH = () => size * 0.95 * 3 + 2;
-  while (h.scrollHeight > maxH() && size > unit * 3.5) {
+  while (h.scrollHeight > size * 0.95 * 3 + 2 && size > unit * 3.5) {
     size -= unit * 0.25;
     h.style.fontSize = size + "px";
   }
 }
 
 render();
-setInterval(render, 60 * 1000);          // re-check the clock every minute
+loadOverrides();
+setInterval(render, 60 * 1000);                                    // re-check the clock every minute
+setInterval(loadOverrides, OVERRIDE_CHECK_MINUTES * 60 * 1000);    // re-check the override sheet
 addEventListener("resize", fitHeadline);
 
-/* Reload once overnight so a republished menu is picked up even if the player never restarts */
+/* Reload once overnight so a newly uploaded menu is picked up even if the player never restarts */
 setInterval(() => {
   if (schoolNow().time === "03:00" && navigator.onLine) location.reload();
 }, 60 * 1000);
